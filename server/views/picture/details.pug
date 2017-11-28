@@ -1,0 +1,12 @@
+extends ../shared/layout
+block main-content
+  h1 Picture details
+  if data !== null
+    h2 Title:
+      span.title= title
+    h2 Description:
+      span.description= description
+    a(href='/picture/list') Go back
+  else
+    p There are no details for this article
+    a(href='/picture/list') Go back

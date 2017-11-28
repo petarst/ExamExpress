@@ -1,0 +1,31 @@
+doctype
+html
+  head
+    title Insta-Exam!
+    link(href="/css/site.css" rel="stylesheet")
+  body
+    .container
+      ul.menu
+        li
+          a(href="/") Home
+        li
+          a(href="/about") About
+        
+        if(currentUser)
+          li
+            a(href="/picture/list") Pictures
+          li
+            a(href="/picture/add") Add picture
+          li
+            span= currentUser.username
+          li  
+            form#logout-form(action="/users/logout" method="post")
+            a(href="javascript:document.getElementById('logout-form').submit()") Logout
+        else 
+          li
+            a(href="/users/register") Register
+          li
+            a(href="/users/login") Log In
+      if (globalError)
+        h3= globalError
+      block main-content

@@ -1,0 +1,14 @@
+extends ../shared/layout
+block main-content
+  h1 Edit picture
+  form(method='post' action='/picture/edit/'+_id)
+    label(for="title") Title
+    br
+    input(type="text" name="title" id="title" value=title)
+    br
+    label(for="description") Description
+    br
+    input(type="text" name="description" id="description" value=description)
+    br
+    br
+    input(type="submit" value="Edit picture")

@@ -1,0 +1,15 @@
+extends ../shared/layout
+block main-content
+  h1 List of picture
+  if picture.length
+    ul
+    each i in picture
+      li=i.title + ' - '
+        a.details(href='/picture/details/' + i._id) Details
+        a.edit(href='/picture/edit/' + i._id) Edit
+        form#logout-form(action="/picture/details/" + i._id + "/delete" method="post")
+            a.delete(href="javascript:document.getElementById('logout-form').submit()") Delete
+  else
+    p There are no picture added
+    a(href='/add') Add picture
+  
